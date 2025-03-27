@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-EMS</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(80deg, #108dc7, #c779d0);
+        }
+        #container{
+            background-color: rgb(249, 249, 242);
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            left: 30%;
+            top: 15%;
+            width: 600px;
+            height: fit-content;
+            padding-top: 40px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding-top: 40px;
+        }
+        input{
+            width: 400px;          
+            height: 35px;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        #container label{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            text-align: left;
+            display: block;
+            padding-left: 100px;
+        }
+        h1{
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            justify-content: center;
+            text-align: center;
+        }
+        #container a{
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            text-decoration: none;
+        }
+        #container p{
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            display: inline-block;
+        }
+        button{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            border-radius: 5px;
+            width: 200px;
+            height: 35px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Login Page</h1>
+        <label>Username</label><br>
+        <input type="text" name="lang" required><br><br>
+        <label>Password</label><br>
+        <input type="password" name="lang" required><br><br>
+        <button>Login</button><br>
+        <p>Don't have an account? <a href="signup.html"><u>Sign Up</u></a></p>  
+    </div>
+</body>
+</html>
