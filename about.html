@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us-EMS</title>
+    <style>
+        #header{
+            border-radius: 10px;
+            height: 50px;
+            display: flex;
+            width: 98%;
+            background-color: #655959;
+        }
+        #header h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            margin-top: 6px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        #header img{
+            padding-left: 35%;
+            padding-top: 3px;
+        }
+        #container {
+            display: inline-block;
+            justify-items: flex-start;    
+        }
+        #home, #about, #contact, #login, #signup {
+            position: absolute;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: larger;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: white;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
+        }
+        #home {
+            left: 10%;
+            width: 150px;
+            padding-left: 40px;
+        }
+        #about {
+            left: 25%;
+            width: 150px;
+            padding-left: 40px;
+        }
+        #contact {
+            left: 40%;
+            width: 150px;
+            padding-left: 35px;
+        }
+        #login {
+            left: 55%;
+            width: 140px;
+            padding-left: 50px;
+        }
+        #signup {
+            left: 70%;
+            width: 150px;
+            padding-left: 40px;
+        }
+        #home a, #about a, #contact a, #login a, #signup a {
+            text-decoration: none;
+            color: black;
+        }
+        #home:hover{
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        #about:hover{
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        #contact:hover {
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        #login:hover{
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        #signup:hover{
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        #container1 h1{
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            margin-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #container1 p{
+            position: absolute;
+            top: 32%;
+        }
+        #para{
+            background-color: white;
+            width: 50%;
+            height: 130px;
+            position: absolute;
+            left: 20%;
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-top: 20px;
+            margin-top: 8px;
+            font-size: larger;
+        }
+        #container2 h1{
+            position: absolute;
+            top: 44%;
+            left: 39%;
+            margin-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #para2{
+            width: 50%;
+            height: 130px;
+            position: absolute;
+            top: 55%;
+            left: 20%;
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-top: 20px;
+            margin-top: 8px;
+            font-size: larger;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+        }
+        footer p {
+            font-size: 14px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="logo.jpg" alt="" height="43px" width="43px">
+        <h1>Employee Management System</h1>
+    </div>
+    <div id="container">
+        <div id="home">
+            <p><a href="home.html">Home</a></p>
+        </div>
+        <div id="about">
+            <p><a href="about.html">About Us</a></p>
+        </div>
+        <div id="contact">
+            <p><a href="contact.html">Contact Us</a></p>
+        </div>
+        <div id="login">
+            <p><a href="login.html">Login</a></p>
+        </div>
+        <div id="signup">
+            <p><a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+    <div id="container1">
+        <h1>About Us</h1>
+        <p id="para">We are committed to simplify the employee management as compared to other websites.  <br>
+            Our platform is designed to provide companies with an intuitive, user-friendly interface that helps HR departments manage 
+            all aspects of their workforce, from leave management to data retrieval effortlessly.</p>
+    </div>
+    <div id="container2">
+        <h1>Our Mission</h1>
+        <p id="para2">At Employee Management System, we are dedicated to delivering the most reliable, flexible, and secure platform 
+            to our users. <br> We strive to improve workplace productivity by integrating the latest technologies, 
+            offering seamless employee management tools, and enhancing communication between employees and managers.</p>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Employee Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
