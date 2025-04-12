@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us-EMS</title>
+    <title>Home-EMS</title>
     <style>
+        body {
+            background-color: #f4f4f4;
+            height: 100%;
+        }
         #header{
             border-radius: 10px;
             height: 50px;
@@ -93,64 +97,71 @@
             -webkit-transform: scale(1.2);
             transform: scale(1.2);
         }
-        #container1 h1{
-            position: absolute;
-            top: 20%;
-            left: 40%;
-            margin-top: 50px;
+        #container1{
+            display: flex;
+        }
+        #left{
+            margin-top: 100px;
+        }
+        #right{
+            margin-top: 100px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        #container1 p{
-            position: absolute;
-            top: 32%;
-        }
-        #para{
+            margin-left: 20px;
+            font-size: larger;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
             background-color: white;
-            width: 50%;
-            height: 130px;
-            position: absolute;
-            left: 20%;
-            border-radius: 20px;
-            padding-left: 20px;
-            padding-top: 20px;
-            margin-top: 8px;
-            font-size: larger;
+            border-radius: 10px;
+            padding-left: 25px;
         }
-        #container2 h1{
+        #head{
+            font-size: x-large;
+        }
+        #button{
+            border-radius: 35px;
+            width: 200px;
+            background-color: rgb(137, 239, 227);
+            height: 25px;
+        }
+        #button a{
+            text-decoration: none;
+            color: black;
+            padding-left: 50px;
+            padding-top: 10px;
+        }
+        #left1{
+            background-color: white;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
             position: absolute;
-            top: 44%;
-            left: 39%;
-            margin-top: 50px;
+            top: 75%;
+            width: 50%;
+            height: 60%;
+            border-radius: 20px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        #para2{
-            width: 50%;
-            height: 130px;
-            position: absolute;
-            top: 55%;
-            left: 20%;
-            border-radius: 20px;
-            padding-left: 20px;
-            padding-top: 20px;
-            margin-top: 8px;
+        #left1 p{
+            padding-left: 25px;
             font-size: larger;
         }
-        footer {
+        #head1{
+            font-size: x-large;
+        }
+        #right1{
+            position: absolute;
+            right: 0;
+            margin-top: 20px;
+        }
+        #footer {
             background-color: #333;
             color: white;
-            padding: 10px 0;
             text-align: center;
+            padding: 20px;
             position: absolute;
-            bottom: 0%;
+            top: 140%;
+            bottom: 0;
             width: 100%;
         }
-        footer p {
-            font-size: 14px;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        #footer p{
+            margin: -8px;
         }
     </style>
 </head>
@@ -177,21 +188,39 @@
         </div>
     </div>
     <div id="container1">
-        <h1>About Us</h1>
-        <p id="para">We are committed to simplify the employee management as compared to other websites.  <br>
-            Our platform is designed to provide companies with an intuitive, user-friendly interface that helps HR departments manage 
-            all aspects of their workforce, from leave management to data retrieval effortlessly.</p>
-    </div>
-    <div id="container2">
-        <h1>Our Mission</h1>
-        <p id="para2">At Employee Management System, we are dedicated to delivering the most reliable, flexible, and secure platform 
-            to our users. <br> We strive to improve workplace productivity by integrating the latest technologies, 
-            offering seamless employee management tools, and enhancing communication between employees and managers.</p>
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Employee Management System. All Rights Reserved.</p>
+        <div id="left">
+            <img src="image.jpg" alt="" height="500px" width="500px">
         </div>
-    </footer>
+        <div id="right">
+            <div id="head">
+                <p>Your centralized hub for managing employee information,leave requests and more. Check out the below features to get started:</p>
+                <p><u>Key Features</u></p>
+            </div>
+            <p><u>Employee Directory:</u><br></p>
+            <p>Quickly access the list of all employees in the organization with their roles, departments, and contact information.</p>
+            <p><u>Leave Management:</u><br></p>
+            <p>Request, track, and approve leaves all in one place.</p>
+            <p><u>Update Personal Information:</u><br></p>
+            <p>Ensure your personal details are up to date in the system.</p>
+            <p>Click on the below button to explore Employee Management System website.</p>
+            <div id="button">
+                <a href="signup.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <div id="left1">
+        <div id="head1">
+            <p>Why Choose Us?</p>
+        </div>
+        <p><u>User-Friendly Interface:</u><br></p><p>Intuitive design makes navigation and task management effortless.</p>
+        <p><u>Faster Access of data:</u><br></p><p>The speed of retrieval of data is faster as compared to other websites.</p>
+        <p><u>Data safety:</u><br></p><p>The data is stored safely without any inconsistency and loss,thus users can feel safe about their data.</p>
+    </div>
+    <div id="right1">
+        <img src="image2.jpg" alt="" height="500px" width="900px">
+    </div>
+<div id="footer">
+    <p>&copy; 2025 Employee Management System. All rights reserved.</p>
+</div>
 </body>
 </html>
