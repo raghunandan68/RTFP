@@ -76,11 +76,37 @@
     <div id="container">
         <h1>Login Page</h1>
         <label>Username</label><br>
-        <input type="text" name="lang" required><br><br>
+        <input type="text" required><br><br>
         <label>Password</label><br>
-        <input type="password" name="lang" required><br><br>
-        <button>Login</button><br>
+        <div style="position: relative; width: 400px; margin: auto;">
+            <input type="password" id="login-password" required style="width: 100%;">
+            <span onclick="togglePassword('login-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
+        </div><br><br>
+        <button type="submit" onclick="validateLogin()">Login</button><br>
         <p>Don't have an account? <a href="signup.html"><u>Sign Up</u></a></p>  
+        <script>
+            function validateLogin() {
+                const username = document.querySelector('input[type="text"]').value.trim();
+                const password = document.querySelector('input[type="password"]').value.trim();
+        
+                if (username === "" || password === "") {
+                    alert("Please enter both username and password.");
+                } else {
+                    location.href = "profile.html";
+                }
+            }
+
+            function togglePassword(inputId, icon) {
+                const input = document.getElementById(inputId);
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.textContent = "🙈"; 
+                } else {
+                    input.type = "password";
+                    icon.textContent = "👁️";
+                }
+            }
+        </script>
     </div>
 </body>
 </html>
