@@ -84,18 +84,58 @@
         <label>User Name</label><br>
         <input type="text" required>
         <label>Password</label><br>
-        <input type="password" required>
+        <div style="position: relative; width: 400px; margin: auto;">
+            <input type="password" id="signup-password" required style="width: 100%;">
+            <span onclick="togglePassword('signup-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
+        </div>
         <label>Confirm Password</label><br>
-        <input type="password" required>
+        <div style="position: relative; width: 400px; margin: auto;">
+            <input type="password" id="confirm-password" required style="width: 100%;">
+            <span onclick="togglePassword('confirm-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
+        </div>
         <button onclick="createAccount()">Sign Up</button><br>
         <script>
-            function createAccount(){
+            function togglePassword(inputId, icon) {
+                const input = document.getElementById(inputId);
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.textContent = "🙈"; 
+                } else {
+                    input.type = "password";
+                    icon.textContent = "👁️";
+                }
+            }
+
+            function createAccount() {
+                const inputs = document.querySelectorAll('input');
+                let allFilled = true;
+        
+                inputs.forEach(input => {
+                    if (input.value.trim() === "") {
+                        allFilled = false;
+                    }
+                });
+        
+                const password = inputs[inputs.length - 2].value;
+                const confirmPassword = inputs[inputs.length - 1].value;
+        
+                if (!allFilled) {
+                    alert("Please fill in all the fields.");
+                    return;
+                }
+        
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return;
+                }
+        
                 alert("Account created successfully.");
                 setTimeout(function(){
                     location.href="login.html";
-                },1000);
+                }, 1000);
             }
         </script>
+        
         <p>Already have an account? <a href="login.html"><u>Login</u></a></p>
     </div>
 </body>
