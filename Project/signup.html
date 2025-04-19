@@ -75,68 +75,33 @@
 <body>
     <div id="container">
         <h1>Employee Sign Up Page</h1>
-        <label>First Name</label><br>
-        <input type="text" required>
-        <label>Last Name</label><br>
-        <input type="text" required>
-        <label>Email address</label><br>
-        <input type="text" required>
-        <label>User Name</label><br>
-        <input type="text" required>
-        <label>Password</label><br>
-        <div style="position: relative; width: 400px; margin: auto;">
-            <input type="password" id="signup-password" required style="width: 100%;">
-            <span onclick="togglePassword('signup-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
-        </div>
-        <label>Confirm Password</label><br>
-        <div style="position: relative; width: 400px; margin: auto;">
-            <input type="password" id="confirm-password" required style="width: 100%;">
-            <span onclick="togglePassword('confirm-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
-        </div>
-        <button onclick="createAccount()">Sign Up</button><br>
-        <script>
-            function togglePassword(inputId, icon) {
-                const input = document.getElementById(inputId);
-                if (input.type === "password") {
-                    input.type = "text";
-                    icon.textContent = "🙈"; 
-                } else {
-                    input.type = "password";
-                    icon.textContent = "👁️";
-                }
-            }
-
-            function createAccount() {
-                const inputs = document.querySelectorAll('input');
-                let allFilled = true;
-        
-                inputs.forEach(input => {
-                    if (input.value.trim() === "") {
-                        allFilled = false;
-                    }
-                });
-        
-                const password = inputs[inputs.length - 2].value;
-                const confirmPassword = inputs[inputs.length - 1].value;
-        
-                if (!allFilled) {
-                    alert("Please fill in all the fields.");
-                    return;
-                }
-        
-                if (password !== confirmPassword) {
-                    alert("Passwords do not match.");
-                    return;
-                }
-        
-                alert("Account created successfully.");
-                setTimeout(function(){
-                    location.href="login.html";
-                }, 1000);
-            }
-        </script>
-        
+        <form action="signup" method="post">
+            <label>First Name</label><br>
+            <input type="text" name="firstname" required>
+            <label>Last Name</label><br>
+            <input type="text" name="lastname" required>
+            <label>Email address</label><br>
+            <input type="text" name="email" required>
+            <label>User Name</label><br>
+            <input type="text" name="username" required>
+            <label>Password</label><br>
+            <input type="password" name="password" required>
+            <label>Confirm Password</label><br>
+            <input type="password" name="confirmpassword" required>
+            <button type="submit">Sign Up</button><br>
+        </form>
         <p>Already have an account? <a href="login.html"><u>Login</u></a></p>
     </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const password = document.querySelector('input[name="password"]').value;
+            const confirmPassword = document.querySelector('input[name="confirmpassword"]').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
