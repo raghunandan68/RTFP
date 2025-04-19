@@ -75,38 +75,42 @@
 <body>
     <div id="container">
         <h1>Login Page</h1>
-        <label>Username</label><br>
-        <input type="text" required><br><br>
-        <label>Password</label><br>
-        <div style="position: relative; width: 400px; margin: auto;">
-            <input type="password" id="login-password" required style="width: 100%;">
-            <span onclick="togglePassword('login-password', this)" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">👁️</span>
-        </div><br><br>
-        <button type="submit" onclick="validateLogin()">Login</button><br>
-        <p>Don't have an account? <a href="signup.html"><u>Sign Up</u></a></p>  
+        <form method="POST" action="http://localhost:8080/login" id="login-form">
+            <label>Username</label><br>
+            <input type="text" name="username" required><br><br>
+            <label>Password</label><br>
+            <input type="password" name="password" required><br><br>
+            <button type="submit">Login</button><br>
+        </form>
         <script>
-            function validateLogin() {
-                const username = document.querySelector('input[type="text"]').value.trim();
-                const password = document.querySelector('input[type="password"]').value.trim();
-        
-                if (username === "" || password === "") {
-                    alert("Please enter both username and password.");
-                } else {
-                    location.href = "profile.html";
-                }
-            }
+            document.getElementById("login-form").addEventListener("submit", function (e) {
+                e.preventDefault(); // prevent default form submission
 
-            function togglePassword(inputId, icon) {
-                const input = document.getElementById(inputId);
-                if (input.type === "password") {
-                    input.type = "text";
-                    icon.textContent = "🙈"; 
-                } else {
-                    input.type = "password";
-                    icon.textContent = "👁️";
-                }
-            }
+                const formData = new FormData(this);
+                fetch("http://localhost:8080/your-app-name/login", {
+                    method: "POST",
+                    body: formData,
+                    credentials: "include" // To allow session cookies if needed
+                })
+                    .then(response => {
+                        if (response.redirected) {
+                            window.location.href = response.url;
+                        } else {
+                            return response.text();
+                        }
+                    })
+                    .then(data => {
+                        if (data) {
+                            document.getElementById("container").innerHTML += data;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+            });
         </script>
+
+        <p>Don't have an account? <a href="signup.html"><u>Sign Up</u></a></p>
     </div>
 </body>
 </html>
