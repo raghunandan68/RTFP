@@ -1,0 +1,52 @@
+h1{
+    text-align: center;
+    color: white;
+    background-color: rgb(6, 6, 87);
+    height: 50px;
+    justify-content: center;
+    line-height: 50px;
+    border-radius: 10px;
+}
+
+#images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+}
+
+img:hover{
+    border: 5px solid black;
+}
+
+#score{
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    font-size: xx-large;
+    position: absolute;
+    left: 40%;
+}
+
+#user{
+    margin-right: 100px;
+}
+
+button{
+    color: white;
+    border: none;
+    font-size: x-large;
+    background-color: rgb(17, 17, 111);
+    border-radius: 20px;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    width: 200px;
+    height: 70px;
+}
