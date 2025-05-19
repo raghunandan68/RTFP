@@ -26,7 +26,7 @@
 //     para.style.color="black";
 // })
 
-let btn = document.querySelector("button");
+let btn = document.querySelector(".reset");
 let boxes = document.querySelectorAll(".box");
 let turnO = true; 
 const wins=[
@@ -46,6 +46,7 @@ btn.addEventListener("click", () => {
         box.disabled = false; 
     }
     turnO = true; 
+    btn.innerText="Reset Game";
 });
 boxes.forEach(box => {
     box.addEventListener("click", () => {
@@ -65,6 +66,9 @@ const checkWinner=()=>{
         if(pos1!="" && pos2!="" && pos3!=""){
             if(pos1==pos2 && pos2==pos3 && pos3==pos1){
                 msg.innerText=`Congratualtions!Winner is ${pos1}`;
+                setTimeout(()=>{
+                    btn.innerText="New Game";
+                },100);
             }
         }
     }
