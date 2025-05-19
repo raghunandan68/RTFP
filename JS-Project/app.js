@@ -1,5 +1,6 @@
 let userScore = 0;
 let compScore = 0;
+let gamePoint=5;
 let divs = document.querySelectorAll("#images div"); 
 let btn = document.querySelector("button");
 
@@ -53,5 +54,30 @@ divs.forEach((div) => {
 
         document.getElementById("userScore").innerText = userScore;
         document.getElementById("compScore").innerText = compScore;
+
+        if(userScore==gamePoint){
+            btn.innerText="You won the game!"
+            btn.style.backgroundColor="green";
+            setTimeout(()=>{
+                userScore=0;
+                compScore=0;
+                document.getElementById("userScore").innerText=userScore;
+                document.getElementById("compScore").innerText=compScore;
+                btn.innerText="Play Your Move";
+                btn.style.backgroundColor="rgb(17,17,111)";
+            },900);
+        }
+        else if(compScore==gamePoint){
+            btn.innerText="You lost the game!";
+            btn.style.backgroundColor="red";
+            setTimeout(()=>{
+                userScore=0;
+                compScore=0;
+                document.getElementById("userScore").innerText=userScore;
+                document.getElementById("compScore").innerText=compScore;
+                btn.innerText="Play Your Move";
+                btn.style.backgroundColor="rgb(17,17,111)";
+            },900);
+        }
     });
 });
